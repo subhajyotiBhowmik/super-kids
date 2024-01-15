@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Kids Super App</title>
+  </head>
+  <body>
+    <div class="app-container">
+      <header>
+        <h1>Kids Super App</h1>
+      </header>
+      <nav>
+        <button onclick="showSection('home')">Home</button>
+        <button onclick="showSection('games')">Games</button>
+        <button onclick="showSection('videos')">Videos</button>
+        <button onclick="showSection('draw')">Draw</button>
+      </nav>
+      <main>
+        <section id="home" class="active">
+          <h2>Welcome to the Kids Super App!</h2>
+          <p>
+            Explore games, watch fun videos, and unleash your creativity with
+            drawing activities.
+          </p>
+          <img src="kids.gif" alt="Kids playing" />
+          <div id="interactive-character"></div>
+        </section>
+        <section id="games">
+          <h2>Games</h2>
+          <button onclick="playMemoryGame()">Memory Game</button>
+          <p id="score">Score: 0</p>
+          <canvas id="memoryGameCanvas" width="400" height="300"></canvas>
+          <div id="winnerAnimation"></div>
+        </section>
+        <section id="videos">
+          <section id="video1"></section>
+            <h2>Videos</h2>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/hxOApe1P9dM"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </section>
+        </section>
+        <section id="draw">
+          <h2>Draw</h2>
+          <div id="drawing-tools">
+            <input
+              type="color"
+              id="colorPicker"
+              value="#ff4d6d"
+              onchange="changeColor(this.value)"
+            />
+            <button onclick="toggleEraser()">Eraser</button>
+            <canvas id="drawingCanvas" width="400" height="300"></canvas>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
